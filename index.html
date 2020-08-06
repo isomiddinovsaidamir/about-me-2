@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+
+        <link rel="stylesheet" type="text/css" href="vendors/css/ionicons.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="shortcut icon" type="image/png" href="img/ex-7.jpg">
+        
+        <title>Said Amir Isomiddinov</title>
+        
+        <style>
+                * {
+                margin: 0;
+                padding: 0;
+                }
+
+                *,
+                *::before,
+                *::after {
+                    box-sizing: inherit;
+                }
+
+                html {
+                    box-sizing: border-box;
+                    font-size: 62.5%;
+                }
+
+                body {
+                    max-width: 100%;
+                    font-family: 'Lato', sans-serif;
+                    font-weight: 400;
+                    line-height: 1.6;
+                    background-color: #ccc;
+
+                    min-height: 100vh;
+                }
+
+                /*---------------------------------ROW----------------------------------------------*/
+                .row {
+                  max-width: 114rem;
+                  margin: 0 auto;
+                  margin-bottom: 8rem;
+                  }
+
+                .row:not(:last-child) {
+                  margin-bottom: 8rem;
+                }
+
+                .row::after {
+                        content: "";
+                        display: table;
+                        clear: both;
+                }
+
+                [class^="col-"] {
+                    float: left;
+                }
+                [class^="col-"]:not(:last-child){
+                     margin-right: 6rem;
+                }
+
+                .col-1-of-2 {
+                    width: calc((100% - 6rem) / 2);
+                    float: left;
+                }
+                .col-1-of-2:not(:last-child) {
+                    margin-right: 6rem;
+                }
+
+                .col-1-of-3 {
+                    width: calc((100% - 2 * 6rem) / 3);
+                }
+
+                .col-2-of-3 {
+                    width: calc(2* ((100% - 2 * 6rem) / 3) + 6rem);
+                }
+
+
+                .col-1-of-4 {
+                    width: calc((100% - 3 * 6rem) / 4);
+                }
+
+                .col-2-of-4 {
+                    width: calc(2 * ((100% - 3 * 6rem) / 4) + 6rem);
+                }
+
+                .col-3-of-4 {
+                    width: calc(3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem);
+                }
+
+
+                .dots {
+                    flex-direction: row;
+                    color: #1c1c1c;
+                    font-size: 3rem;
+                    transform: translate(8%, -110%);
+                    letter-spacing: 1.5rem;
+                    font-weight: bold;
+
+                }
+
+                .introduction {
+                    transform: translate(27%, 152%);
+                }
+
+                .text-1{
+                    color: #f4f2f2;
+                    font-size: 3rem;
+                    font-weight: 100;
+                    text-transform: uppercase;
+                    word-spacing: 5px;
+                    margin-bottom: 7rem;
+                }
+
+                .name {
+                    transform: translate(20%, 135%);
+                    width: 40rem;
+                    color: #f4f2f2;
+                    font-size: 5rem;
+                    text-transform: uppercase;
+                    word-spacing: 1rem;
+                    letter-spacing: 7px;
+                    font-weight: 900;    
+                }
+
+                .job:link,
+                .job:visited {
+                    font-size: 2rem;
+                    font-weight: 900;
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    color: rgba(0, 0, 0, 0.9);
+                    padding: .2rem 4.5rem;
+                    background-color: yellow;
+                    background-image: linear-gradient(120deg, transparent 0%, transparent 50%, white 50%);
+                    background-size: 220%;
+                    display: inline-block;
+                    transition: all .4s;
+                }
+
+                .job:hover,
+                .job:active {
+                    background-position: 100%;
+                    color: black;
+                    transform: translateX( 1rem);
+                }
+
+                .container {
+                    max-width: 100rem;
+                    margin: 8rem auto;
+                    background-color: #f4f2f2;
+                    box-shadow: -11px 14px 16px -4px rgba(0,0,0,0.75); 
+
+                    min-height: 60rem;
+                }
+
+                .sidebar {
+                    background-color: rgba(0, 0, 0, 0.95);
+                    float: left;
+                    width: 30%;
+                    height: 60rem;
+                }
+
+                .text {
+                    color: #f4f2f2;
+                    text-align: center;
+                    padding: 2rem;
+                    font-size: 2rem;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    letter-spacing: 4px;
+                }
+
+                .page-view {
+                    float: right;
+                    background-image: url(img/ex-2.jpg);
+                    width: 70%;
+                    height: 54rem;
+                    background-size: cover;
+                    background-position: center;
+                }
+                /*--------NAVIGATION---------*/
+                .navigation {
+                    float: right;
+                    width: 70%;
+                    height: 6rem;
+                    background-color: rgba(0, 0, 0, 0.6);
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.7);
+
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                }
+
+                .btn {
+                    justify-content: center;
+                    margin-top: 1.7rem;
+
+                    color: #f4f2f2;
+                    font-weight: 900;
+                    font-size: 1.3rem;
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    letter-spacing: 3px;
+                    transition: all .3s;
+                }
+
+                .btn:not(:last-child) {
+                    margin-right: 7rem;
+                }
+
+                .btn:hover {
+                    border-bottom: 7px solid yellow;
+                    margin-bottom: 1rem;
+                    display: inline-block;
+                }
+
+
+                /*--------ABOUT-ME---------*/
+                .about {
+                    max-width: 100rem;
+                    background-color: rgba(240, 238, 238, 0.6);
+                    min-height: 60rem;
+                    margin-top: -2rem;
+                    margin-bottom: 8rem;
+                    margin-left: auto;
+                    margin-right: auto;
+                    box-shadow: -11px 14px 16px -4px rgba(0,0,0,0.75);
+                    border-radius: 5px;
+                }
+
+                .question {
+                    font-size: 1.7rem;
+                    text-transform: lowercase;
+                    font-weight: 900;
+                    color: rgb(8, 8, 8);
+                    padding-top: 20%;
+                    margin-left: 8rem;
+                }
+
+                .hello {
+                    font-size: 5rem;
+                    text-transform: uppercase;
+                    font-weight: 900;
+                    margin-top: -3%;
+                    color: rgb(8, 8, 8);
+                }
+
+                .paragraph {
+                    font-size: 1.3rem;
+                    font-weight: 700;
+                    margin-right: 10rem;
+                    color: rgb(8, 8, 8);
+
+                }
+
+                .paragraph:not(:last-child) {
+                    margin-bottom: 4rem;
+                    margin-top: 3%;
+
+                }
+
+                .photo {
+                    width: 65%;
+                    transform: translate(42%, 45%);
+                    box-shadow:  -5rem -5rem 0 0 rgb(8, 8, 8);
+                    outline-offset: 1rem;
+                    outline: .8rem  solid rgb(245, 255, 0);
+                }
+
+                .portfolio {
+                    max-width: 100rem;
+                    background-color: #f4f2f2;
+                    min-height: 60rem;
+                    margin-top: -2rem;
+                    margin-bottom: 8rem;
+                    margin-left: auto;
+                    margin-right: auto;
+                    box-shadow: -11px 14px 16px -4px rgba(0,0,0,0.75);
+                    border-radius: 5px;
+                }
+
+                .text-t {
+                    padding-top: 2rem;
+                    color: rgb(8, 8, 8);
+                }
+
+                .my-work {
+                    font-size: 5rem;
+                    text-transform: uppercase;
+                    font-weight: 900;
+                    margin-top: 5%;
+                    text-align: center;
+                }
+
+                .awesome-prj {
+                    font-size: 2rem;
+                    text-transform: lowercase;
+                    font-weight: 900;
+                    letter-spacing: .5px;
+                    transform: translate(46%, -80%);
+                }
+
+                .projects-1 {
+                    display: flex;
+                    padding: 10px;
+
+                    flex-direction: row;
+                    justify-content: center;
+
+                }
+
+                .projects-2 {
+                    display: flex;
+                    padding-bottom: 10rem;
+
+                    flex-direction: row;
+                    justify-content: center;
+                }
+
+                .gallery-photo {
+                    margin: 15px 20px;
+                    width: 20rem;
+                    height: 20rem;
+                    border-radius: 5px;
+                    box-shadow: -10px 10px 15px 0px rgba(0,0,0,0.75);
+                    transition: all .3s;
+                    outline-offset: 1rem;
+                }
+
+                .gallery-photo:hover {
+                    transform: scale(1.10);
+                    box-shadow: -10px 10px 15px 5px rgba(0,0,0,0.75);
+                    outline: 1rem solid yellow;
+
+                }
+
+                .section-contact {
+                    width: 100rem;
+                    background-color: #a3a3a3;
+                    height: 60rem;
+                    margin: -2rem auto 8rem auto;
+                    background-color: #6a6a6a;
+                    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(img/ex-9.jpg);
+                    border-top-left-radius: 5px;
+                    border-top-right-radius: 5px;
+                    box-shadow: -11px 24px 16px -4px rgba(0,0,0,0.75);
+                    background-size: cover;
+                    background-blend-mode: luminosity;
+                }
+
+                .contact-form {
+                    width: 100%;
+                    height: 6rem;
+
+                }
+
+                .text-contact {
+                    width: 100%;
+                    text-align: center;
+                    font-size: 5.5rem;
+                    color: rgba(244, 242, 242, 0.81);
+                    padding: 1.5rem 1rem;
+                    margin-bottom: 1rem;
+                }
+
+                .group-form { transform: translate(25%); }
+
+                .form-input {
+                    font-size: 2rem;
+                    font-family: inherit;
+                    color: inherit;
+                    padding: 1.05rem 2rem;
+                    border-radius: 2px;
+                    background-color: rgba(255, 255, 255, 0.5);
+                    border: none;
+                    border-bottom: 3px solid transparent;
+                    width: 50%;
+                    display: block;
+                    border-radius: 5px;
+                    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.5);
+                }
+
+                .form-input:focus { 
+                    outline: none; 
+                    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5);
+                    border-bottom: 3px solid green;
+                }
+
+                .form-input:focus:invalid { border-bottom: 3px solid orange; }
+
+                .form-input::-webkit-input-placeholder { color: #ccc; }
+
+                .form-input:placeholder-shown + .form-label {
+                    opacity: 0;
+                    visibility: hidden;
+                    transform: translateY(-4rem);
+                }
+
+                .form-label {
+                    font-size: 1.7rem;
+                    font-weight: 700;
+                    margin-left: 2rem;
+                    margin-top: .7rem;
+                    display: block;
+                    transition: all .3s;
+                    color: #c6c6c6;
+                }
+
+
+
+                textarea {
+                    margin-left: 25rem;
+                    margin-top: 2rem;
+                    padding: 1.05rem 2rem;
+                    background-color: rgba(255, 255, 255, 0.5);
+                    border: none;
+                    display: block;
+                    width: 50%;
+                    height: 15rem;
+                    border-radius: 5px;
+                    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.5);
+                }
+
+                .text-style {
+                    font-size: 2rem;
+                    font-weight: 400;
+                    font-family: inherit;
+                    color: #c6c6c6;
+                    display: block;
+                }
+
+                textarea::-webkit-input-placeholder { color: #ccc; }
+
+                textarea:focus { 
+                    outline: none; 
+                    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5);
+                    border-bottom: 3px solid green;
+                }
+
+                .submit:hover {
+                    transform: translateY(-3px);
+                    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5);
+                }
+
+                .submit:active {
+                    transform: translateY(-1px);
+                    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.5);
+                }
+
+                .submit {
+                    font-size: 2rem;
+                    font-weight: 300;
+                    margin-top: 3.6rem;
+                    margin-left: 25rem;
+
+                    width: 20rem;
+                    border: none;
+                    padding: 1.5rem 1.5rem;
+                    text-decoration: none;
+                    border-radius: 5px;
+                    background-color: rgba(255, 255, 255, 0.5);
+                    color: #ccc;
+                    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.5);
+                }
+
+                .social-link-icons {
+                    list-style: none;
+                    float: right;
+                    font-size: 4rem;
+                    border-bottom: 2px solid #888;
+                    transform: translate(-95%, 40%);
+                    transition: color 5s; 
+                }
+
+                .social-links li {
+                    display: inline-block;
+                }
+
+                .social-links li:not(:last-child) {
+                    margin-right: 40px;
+                }
+
+                .social-links li a:link,
+                .social-links li a:visited {
+                    text-decoration: none;
+                    border: 0;
+                    color: #ccc;
+                    transition: color 5s;
+                }
+
+                .ion-social-facebook:hover {
+                    color: #3b5998;
+                    transition: color .1s;
+                }
+
+                .ion-social-instagram:hover {
+                    color: #E1306C;
+                    transition: color .1s;
+                }
+
+                .ion-paper-airplane:hover {
+                    color: #0084ff;
+                    transition: color .1s;
+                }
+
+                .ion-social-github:hover {
+                    color: #24292e;
+                    transition: color .1s;
+                }
+
+                footer {
+                    width: 100rem;
+                    margin: -8rem auto 8rem auto;
+                    box-shadow: -11px 14px 16px -4px rgba(0,0,0,0.75);
+                    background-color: #333;
+                    height: 15rem;
+                    border-bottom-left-radius: 5px;
+                    border-bottom-right-radius: 5px;
+
+                }
+
+                footer p {
+                    padding: 5rem;
+                    color: rgba(204, 204, 204, 0.9);
+                    text-align: center;
+                    font-size: 2.5rem;
+                }
+
+        </style>
+        
+        
+    </head>
+    <body>
+         <header class="container" id="container">
+             <div class="content">
+                <div class="sidebar">
+                   <div class="text">
+                       <p>Portfolio</p>
+                   </div>
+                   <div class="introduction">
+                        <p class="text-1">My name is</p> 
+                         
+                        <a class="job" href="#about">I'm a UI developer</a>
+                    </div>
+                    <div class="name">Said amir</div>
+                    <div class="dots">
+                        <p>..........</p>
+                        <p>..........</p>
+                        <p>..........</p>
+                        <p>..........</p>
+                        <p>..........</p>
+                    </div>
+                </div>
+                
+                <nav class="navigation">
+                        <a class="btn" href="#container">Home</a>
+                        <a class="btn" href="#about">About</a>
+                        <a class="btn" href="#portfolio">Works</a>
+                        <a class="btn" href="#section-contact">Contact</a>   
+                </nav> 
+                <div class="page-view">
+                    
+                </div>
+            </div>
+                        
+        </header>
+        
+        
+        <main>
+         <section class="about" id="about">
+            <div class="row">
+                <div class="col-1-of-2">
+                    <div class="composition">
+                    <img src="img/ex-1.jpg" alt="Photo 1" class="photo"></div>
+                </div>
+                <div class="col-1-of-2">
+                    <h1 class="question">
+                        who am i
+                    </h1>
+                    <h2 class="hello">Hello</h2>
+                    <p class="paragraph">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                    </p>
+                    
+                    <p class="paragraph">
+                        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                </div>
+            </div>
+          </section>
+          <section class="portfolio" id="portfolio">
+              <div class="text-t">
+                  <h2 class="my-work">My work</h2>
+                  <p class="awesome-prj">awesome projects</p>
+              </div>
+              
+            
+                 <div class="projects-1">
+                  <figure class="gallery-item">
+                      <img src="img/ex-2.jpg" alt="Project 1" class="gallery-photo">
+                  </figure>
+                  <figure class="gallery-item">
+                      <img src="img/ex-3.jpg" alt="Project 2" class="gallery-photo">
+                  </figure>
+                  <figure class="gallery-item">
+                      <img src="img/ex-4.jpg" alt="Project 3" class="gallery-photo">
+                  </figure>
+              </div>     
+                   <div class="projects-2">
+                  <figure class="gallery-item">
+                      <img src="img/ex-5.jpg" alt="Project 1" class="gallery-photo">
+                  </figure>
+                  <figure class="gallery-item">
+                      <img src="img/ex-8.jpg" alt="Project 2" class="gallery-photo">
+                  </figure>
+                  <figure class="gallery-item">
+                      <img src="img/ex-7.jpg" alt="Project 3" class="gallery-photo">
+                  </figure>
+              </div>   
+          </section>
+          <section class="section-contact" id="section-contact">
+              <div class="row">
+                <div class="back-image">
+                 <div class="contact-form">
+                          <form action="#" class="form">
+                             <div class="text-contact">
+                                 <h3>Contacts</h3>
+                             </div>
+                        <div class="group-form">
+                              <input type="text" class="form-input" id="name" placeholder="Full name" required>
+                              <label for="name" class="form-label">Full name</label>
+                        </div> 
+                        <div class="group-form">      
+                              <input type="email" class="form-input" id="email" placeholder="Email address" required>
+                              <label for="email" class="form-label">Email address</label>
+                        </div>
+                       <textarea name="message" class="text-style" placeholder="Your message"></textarea> 
+                       <input type="submit" class="submit" value="Send it">  
+                       <div class="social-link-icons">
+                        <ul class="social-links">
+                            <li><a href="https://www.facebook.com/saidamir.isomiddinov.3"><i class="ion-social-facebook"></i></a></li>
+                            <li><a href="https://www.instagram.com/saidamir.isomiddinov/"><i class="ion-social-instagram"></i></a></li>
+                            <li><a href="https://t.me/saidamirr"><i class="ion-paper-airplane"></i></a></li>
+                            <li><a href="https://github.com/isomiddinovsaidamir"><i class="ion-social-github"></i></a></li>
+                        </ul>
+                       </div>          
+                            
+                     </form>
+                  </div>
+                  
+                  </div>
+              </div>
+          </section>
+          <footer>
+            <p> &copy; 2020 Said Amir Isomiddinov</p>
+        </footer>
+        </main>  
+          
+    </body>
+            
+</html>
+
